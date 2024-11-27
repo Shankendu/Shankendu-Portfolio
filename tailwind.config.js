@@ -58,13 +58,31 @@ export default {
             transform:"scale(1.7)",
             opacity:"0"
           }
+        },
+        autorun: {
+          from:{
+            left:"100%"
+          },
+          to:{
+            left: "calc(var(--width) * -1)"
+          }
+        },
+        autorunReverse: {
+          from:{
+            right:"100%"
+          },
+          to:{
+            right: "calc(var(--width) * -1)"
+          }
         }
       },
       animation: {
         'spin-words': 'spin 1s linear 1',
         'scroll-left': 'scrollLeft 30s linear infinite calc(30s / 2 * (var(--position) - 1))',
         'spinner': 'load 3s linear infinite',
-        'ripple': 'ripple 1s linear infinite'
+        'ripple': 'ripple 1s linear infinite',
+        "autorun": 'autorun 10s linear infinite calc((10s / var(--quantity)) * (var(--position) - 1))',
+        "autorun-reverse": 'autorunReverse 10s linear infinite calc((10s / var(--quantity)) * (var(--position) - 1))'
       },
     },
   },

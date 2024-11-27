@@ -8,10 +8,27 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Context } from "../context/context";
 import HamburgerMenu from "../components/HamburgerMenu";
+// import htmlLogo from "../assets/htmlLogo.png";
+// import cssLogo from "../assets/cssLogo.png";
+// import javascriptLogo from "../assets/javascriptLogo.png";
+// import reactLogo from "../assets/reactLogo.png";
+// import tailwindLogo from "../assets/tailwindLogo.png";
+// import bootstrapLogo from "../assets/bootstrapLogo.png";
+// import nodeLogo from "../assets/nodeLogo.png";
+// import expressLogo from "../assets/expressLogo.png";
+// import mongoLogo from "../assets/mongoLogo.png";
+// import reduxLogo from "../assets/reduxLogo.png";
+import cryptoLogo from "../assets/cryptoWork.png";
+import layerLogo from "../assets/layerLogo.png";
+import weatherLogo from "../assets/weatherLogo.png";
+import latestLogo from "../assets/latestLogo.png";
+import textLogo from "../assets/textLogo.png";
+import qrLogo from "../assets/qrLogo.png";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const container = useRef();
-  const { setLoading } = useContext(Context);
+  const { loading, setLoading } = useContext(Context);
   const [isPlaying, setIsPlaying] = useState(false);
   const [audio] = useState(new Audio(favAudio));
   const [open, setOpen] = useState(false);
@@ -78,6 +95,7 @@ const Home = () => {
   );
   return (
     <>
+      {/* Hero Section */}
       <div
         className="w-full min-h-screen relative overflow-hidden dark:bg-[#1A1A1A] bg-[#F0F0F0] "
         ref={container}
@@ -95,11 +113,11 @@ const Home = () => {
           socialClassname={` ${open ? "translate-x-0" : "translate-x-full"}`}
         />
         <Navbar onClick={() => setOpen(!open)} id="navbar" />
+        {/* Character component */}
         <div
           id="home"
           className="w-full h-screen flex items-center justify-center"
         >
-          {/* Character component */}
           <div className=" h-screen w-[100%] basis-[100%] flex justify-center items-center relative overflow-y-hidden overflow-x-visible">
             <img
               className="min-h-[90vh] sm:h-[100vh] md:h-[130vh] object-cover absolute bottom-0 sm:top-0"
@@ -109,6 +127,7 @@ const Home = () => {
           </div>
         </div>
 
+        {/* Right and Left Component */}
         <div
           id="rightLeft"
           className="w-full flex justify-between items-center absolute bottom-[-60px] sm:bottom-[-60px] md:bottom-[40%] md:top-[40%] lg:top-[25%] xl:top-[25%] z-10"
@@ -173,15 +192,15 @@ const Home = () => {
           </div>
         </div>
 
+        {/* Name Marquee */}
         <div className="absolute bottom-0 w-full flex justify-center font-poppins">
-          {/* Name Marquee */}
           <div
             id="marquee"
             className="flex items-center h-[50px] w-[200%] text-[max(2em,_16vw)] md:text-[max(6em,_16vw)] dark:text-[#EAEAEA] text-[#333333] relative selection:bg-transparent dark:selection:bg-transparent group/marquee cursor-pointer"
             draggable="false"
           >
             <div
-              className="absolute w-full left-[100%] animate-scroll-left translate-y-[-150%] sm:translate-y-[-60%] md:translate-y-[-50%] lg:translate-y-[-45%] will-change-transform group-hover/marquee:[animation-play-state:paused]"
+              className="absolute w-full left-[100%] animate-scroll-left translate-y-[-150%] sm:translate-y-[-60%] md:translate-y-[-50%] lg:translate-y-[-45%] will-change-transform"
               style={{ "--position": 1 }}
             >
               <h1 className="whitespace-nowrap ">Shankendu Kunti -</h1>
@@ -196,19 +215,24 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="dark:bg-[#eaeaea] bg-[#333333] min-h-screen w-full font-poppins dark:text-[#1a1a1a] text-[#F0F0F0] p-20">
+      {/* Below Hero Section */}
+      <div
+        className={`${
+          loading ? "hidden" : "block"
+        } dark:bg-[#eaeaea] bg-[#333333] min-h-screen w-full font-poppins dark:text-[#1a1a1a] text-[#F0F0F0] p-5 md:p-20`}
+      >
         {/* About Section */}
-        <div className=" w-full h-fit flex items-start justify-center px-5 pt-5 border-b-2 dark:border-[#A3A3A3] border-[#F0F0F0] ">
-          <div className=" px-5 pt-5 h-[inherit] flex flex-col items-start justify-start gap-y-24">
-            <h1 className="text-3xl leading-relaxed  ">
+        <div className=" w-full h-fit flex flex-col md:flex-row item-center md:items-start justify-center px-5 pt-5 border-b-2 dark:border-[#A3A3A3] border-[#F0F0F0] ">
+          <div className=" px-5 pt-5 h-[inherit] flex flex-col item-center md:items-start justify-center md:justify-start gap-y-24">
+            <h1 className="text-xl md:text-3xl leading-relaxed  ">
               I’m a passionate web developer with expertise in creating
               seamless, responsive, and impactful websites. Driven by curiosity
               and innovation, I transform ideas into digital experiences that
               leave a lasting impression.
             </h1>
-            <h1 className="text-base">RECENT PROJECT</h1>
+            <h1 className="hidden md:block text-base">RECENT PROJECT</h1>
           </div>
-          <div className=" flex flex-col gap-y-10 justify-start items-start p-8">
+          <div className=" flex flex-col gap-y-10 item-center md:items-start justify-center md:justify-start p-5">
             <h1>
               I focus on creating user-centered designs with clean code,
               delivering tailored solutions that make every project stand out.
@@ -223,21 +247,23 @@ const Home = () => {
         </div>
 
         {/* Work Section */}
-        <div className="w-full h-fit p-10 border-b-2 dark:border-[#A3A3A3] border-[#F0F0F0] flex items-center justify-between">
-          <h1 className=" text-7xl">CRYPTOTRACKR</h1>
+        <div className="w-full h-fit p-10 border-b-2 dark:border-[#A3A3A3] border-[#F0F0F0] flex md:flex-row flex-col items-center justify-between">
+          <h1 className="text-4xl sm:text-5xl md:text-5xl lg:7xl pb-10 md:pb-0 hover:text-[#A3A3A3] transition-colors duration-500">
+            CRYPTOTRACKR
+          </h1>
 
-          <div className="h-[10em] w-[17em] rounded-[1em] overflow-hidden relative group p-4 z-0">
+          <div className="h-[10em] sm:h-[12em] md:h-[10em] w-[17em] sm:w-[20em] md:w-[17em] rounded-[1em] overflow-hidden relative group p-4 z-0">
             <div className="circle absolute h-[5em] w-[5em] -top-[2.5em] -right-[2.5em] rounded-full bg-[#5B84FF] group-hover:scale-[800%] duration-500 group-hover:opacity-60 group-hover:blur-md"></div>
 
             <button className="text-[0.8em] absolute bottom-[1em] left-[1em] group-hover:dark:text-[#eaeaea] group-hover:text-[#333333] duration-500">
-              <span className="relative before:h-[0.16em] before:absolute before:w-full before:content-[''] group-hover:before:bg-[white] duration-100 before:bottom-0 before:left-0 scale-0 group-hover:scale-100">
+              <a href="https://github.com/Shankendu/CryptoTrackr---Price-Tracking-and-Market-Analysis" target="_blank" rel="noopener noreferrer" className="relative before:h-[0.16em] before:absolute before:w-full before:content-[''] group-hover:before:bg-[white] duration-100 before:bottom-0 before:left-0 scale-0 group-hover:scale-100">
                 source code
-              </span>
+              </a>
               <i className="fa-solid fa-arrow-right"></i>
             </button>
 
             <button className="absolute font-poppins scale-0 group-hover:scale-100 group-hover:dark:text-[#eaeaea] group-hover:text-[#333333]  duration-500 text-[1.4em]">
-              VIEW PAGE
+              <a href="https://crypto-trackr-price-tracking-and-market-analysis.vercel.app/" target="_blank" rel="noopener noreferrer">VIEW PAGE</a>
             </button>
             <img
               src={work}
@@ -248,8 +274,8 @@ const Home = () => {
         </div>
 
         {/* View More Button */}
-        <div className="w-full h-fit px-20 pt-20 flex items-center justify-center">
-          <button className="group relative inline-flex h-24 w-60 items-center justify-center overflow-hidden rounded-full border dark:border-[#A3A3A3] border-[#F0F0F0]  bg-transparent font-medium">
+        <div className="w-full h-fit md:px-20 py-10 md:pt-20 flex items-center justify-center">
+          <button className="group relative inline-flex h-24 w-full md:w-60 items-center justify-center overflow-hidden rounded-full border dark:border-[#A3A3A3] border-[#F0F0F0]  bg-transparent font-medium">
             <div className="inline-flex h-12 translate-y-0 items-center justify-center px-6 text-neutral-950 transition duration-[600ms] group-hover:-translate-y-[150%]">
               More Projects
             </div>
@@ -260,6 +286,104 @@ const Home = () => {
           </button>
         </div>
       </div>
+
+      {/* Skill Section */}
+      <div
+        className={`${
+          loading ? "md:hidden" : "md:block"
+        } w-full h-fit pb-20 dark:bg-[#eaeaea] bg-[#333333] hidden`}
+      >
+        {/* Slider-1 */}
+        <div
+          className="w-full mb-5 h-[250px] overflow-hidden group"
+          style={{ "--width": "600px", "--quantity": 6 }}
+        >
+          <div className="w-full min-w-[calc(var(--width)_*_var(--quantity))] border-b-2 flex items-center relative ">
+            <div
+              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              style={{ "--position": 1 }}
+            >
+              <img className="w-full" src={cryptoLogo} alt="html" />
+            </div>
+            <div
+              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              style={{ "--position": 2 }}
+            >
+              <img className="w-full" src={layerLogo} alt="css" />
+            </div>
+            <div
+              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              style={{ "--position": 3 }}
+            >
+              <img className="w-full" src={weatherLogo} alt="javascript" />
+            </div>
+            <div
+              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              style={{ "--position": 4 }}
+            >
+              <img className="w-full" src={latestLogo} alt="react" />
+            </div>
+            <div
+              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              style={{ "--position": 5 }}
+            >
+              <img className="w-full" src={textLogo} alt="tailwind" />
+            </div>
+            <div
+              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              style={{ "--position": 6 }}
+            >
+              <img className="w-full" src={qrLogo} alt="bootstrap" />
+            </div>
+          </div>
+        </div>
+
+        {/* Slider-2 */}
+        <div
+          className="w-full h-[250px] overflow-hidden group"
+          style={{ "--width": "600px", "--quantity": 6 }}
+        >
+          <div className="w-full min-w-[calc(var(--width)_*_var(--quantity))] border-b-2 flex items-center relative ">
+            <div
+              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              style={{ "--position": 1 }}
+            >
+              <img className="w-full" src={cryptoLogo} alt="html" />
+            </div>
+            <div
+              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              style={{ "--position": 2 }}
+            >
+              <img className="w-full" src={layerLogo} alt="css" />
+            </div>
+            <div
+              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              style={{ "--position": 3 }}
+            >
+              <img className="w-full" src={weatherLogo} alt="javascript" />
+            </div>
+            <div
+              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              style={{ "--position": 4 }}
+            >
+              <img className="w-full" src={latestLogo} alt="react" />
+            </div>
+            <div
+              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              style={{ "--position": 5 }}
+            >
+              <img className="w-full" src={textLogo} alt="tailwind" />
+            </div>
+            <div
+              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              style={{ "--position": 6 }}
+            >
+              <img className="w-full" src={qrLogo} alt="bootstrap" />
+            </div>
+          </div>
+        </div>
+      </div>
+          <Footer className={`${loading ? "hidden" : "block"}`}/>
     </>
   );
 };

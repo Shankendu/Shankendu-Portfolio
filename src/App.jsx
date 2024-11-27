@@ -10,7 +10,7 @@ function App() {
   const {loading} = useContext(Context);
   return (
     <>
-      <div className={`w-full flex flex-col items-center ${loading ? "h-screen" : "min-h-screen"}`}>
+      <div className={`w-full flex flex-col items-center relative ${loading ? "h-screen " : "min-h-screen"}`}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
