@@ -1,37 +1,39 @@
-import male2 from "../assets/characterMale2.png";
-import work from "../assets/work.png";
-import favAudio from "../assets/favAudio.mp3";
 import Navbar from "../components/Navbar";
 import Preload from "../components/Preload";
+import HamburgerMenu from "../components/HamburgerMenu";
+import Footer from "../components/Footer";
 import { useContext, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Context } from "../context/context";
-import HamburgerMenu from "../components/HamburgerMenu";
-// import htmlLogo from "../assets/htmlLogo.png";
-// import cssLogo from "../assets/cssLogo.png";
-// import javascriptLogo from "../assets/javascriptLogo.png";
-// import reactLogo from "../assets/reactLogo.png";
-// import tailwindLogo from "../assets/tailwindLogo.png";
-// import bootstrapLogo from "../assets/bootstrapLogo.png";
-// import nodeLogo from "../assets/nodeLogo.png";
-// import expressLogo from "../assets/expressLogo.png";
-// import mongoLogo from "../assets/mongoLogo.png";
-// import reduxLogo from "../assets/reduxLogo.png";
-import cryptoLogo from "../assets/cryptoWork.png";
-import layerLogo from "../assets/layerLogo.png";
-import weatherLogo from "../assets/weatherLogo.png";
-import latestLogo from "../assets/latestLogo.png";
-import textLogo from "../assets/textLogo.png";
-import qrLogo from "../assets/qrLogo.png";
-import Footer from "../components/Footer";
+import { NavLink } from "react-router-dom";
+import favAudio from "../assets/audio/favAudio.mp3";
+import work from "../assets/images/work.png";
+import male2 from "../assets/images/characterMale2.png";
+import cryptoLogo from "../assets/images/cryptoWork.png";
+import layerLogo from "../assets/images/layerLogo.png";
+import weatherLogo from "../assets/images/weatherLogo.png";
+import latestLogo from "../assets/images/latestLogo.png";
+import textLogo from "../assets/images/textLogo.png";
+import qrLogo from "../assets/images/qrLogo.png";
 
 const Home = () => {
   const container = useRef();
-  const { loading, setLoading } = useContext(Context);
+  const { loading, setLoading, open, setOpen } = useContext(Context);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [audio] = useState(new Audio(favAudio));
-  const [open, setOpen] = useState(false);
+  const [audio, setAudio] = useState(new Audio(favAudio));
+  
+  useEffect(() => {
+    const newAudio = new Audio(favAudio);
+    setAudio(newAudio);
+  }, []);
+
+useEffect(() => {
+  return () => {
+    audio.pause();
+  };
+}, [audio]);
+
 
   useEffect(() => {
     setLoading(true);
@@ -39,17 +41,18 @@ const Home = () => {
     return () => {
       audio.removeEventListener("ended", () => setIsPlaying(false));
     };
+    
   }, []);
-  useEffect(() => {
-    if (open) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-    return () => document.body.classList.remove("overflow-hidden");
-  }, [open]);
 
   const playPause = () => {
+    if (audio) {
+      if (isPlaying) {
+        audio.pause();
+      } else {
+        audio.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
     setIsPlaying(!isPlaying);
     audio.ended ? audio.play() : audio.pause();
   };
@@ -57,6 +60,7 @@ const Home = () => {
   //!Function for playing audio
   useEffect(() => {
     isPlaying ? audio.play() : audio.pause();
+   
   }, [isPlaying]);
 
   useGSAP(
@@ -80,12 +84,12 @@ const Home = () => {
           }, 100);
         },
       });
-      gsap.from(["#navbar", "#home", "#rightLeft", "#marquee"], {
+      gsap.from(["#navbar", "#home", "#rightLeft", "#marquee", "#hamburger"], {
         y: "-200%",
         duration: 3,
         ease: "ease-in",
       });
-      gsap.to(["#navbar", "#home", "#rightLeft", "#marquee"], {
+      gsap.to(["#navbar", "#home", "#rightLeft", "#marquee", "#hamburger"], {
         y: "0",
         duration: 3,
         ease: "ease-in",
@@ -101,7 +105,7 @@ const Home = () => {
         ref={container}
       >
         <Preload id="preload" className="absolute z-20" />
-        <HamburgerMenu
+        <HamburgerMenu id="hamburger"
           onClick={() => setOpen(!open)}
           className={`block sm:hidden absolute z-30 top-0 right-0 ${
             open ? "translate-x-0" : "translate-x-full"
@@ -206,7 +210,7 @@ const Home = () => {
               <h1 className="whitespace-nowrap ">Shankendu Kunti -</h1>
             </div>
             <div
-              className="absolute w-full left-[100%] animate-scroll-left translate-y-[-150%] sm:translate-y-[-60%] md:translate-y-[-50%] lg:translate-y-[-45%] will-change-transform group-hover/marquee:[animation-play-state:paused]"
+              className="absolute w-full left-[100%] animate-scroll-left translate-y-[-150%] sm:translate-y-[-60%] md:translate-y-[-50%] lg:translate-y-[-45%] will-change-transform"
               style={{ "--position": 2 }}
             >
               <h1 className="whitespace-nowrap">Shankendu Kunti -</h1>
@@ -237,12 +241,12 @@ const Home = () => {
               I focus on creating user-centered designs with clean code,
               delivering tailored solutions that make every project stand out.
             </h1>
-            <button className="group relative z-0 h-44 w-44 shadow-xl group-hover:shadow-2xl flex items-center justify-center overflow-hidden overflow-x-hidden rounded-full dark:bg-[#1a1a1a] bg-[#F0F0F0]  dark:text-[#eaeaea] text-[#333333]">
+            <NavLink to="/about" className="group relative z-0 h-44 w-44 shadow-xl group-hover:shadow-2xl flex items-center justify-center overflow-hidden overflow-x-hidden rounded-full dark:bg-[#1a1a1a] bg-[#F0F0F0]  dark:text-[#eaeaea] text-[#333333]">
               <span className="relative z-10">About Me</span>
               <span className="absolute inset-0 overflow-hidden rounded-md">
                 <span className="absolute left-0 aspect-square w-full origin-center translate-x-full rounded-full bg-[#5B84FF] transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
               </span>
-            </button>
+            </NavLink>
           </div>
         </div>
 
@@ -275,15 +279,15 @@ const Home = () => {
 
         {/* View More Button */}
         <div className="w-full h-fit md:px-20 py-10 md:pt-20 flex items-center justify-center">
-          <button className="group relative inline-flex h-24 w-full md:w-60 items-center justify-center overflow-hidden rounded-full border dark:border-[#A3A3A3] border-[#F0F0F0]  bg-transparent font-medium">
+          <NavLink to="/projects" className="group relative inline-flex h-24 w-full md:w-60 items-center justify-center overflow-hidden rounded-full border dark:border-[#A3A3A3] border-[#F0F0F0]  bg-transparent font-medium">
             <div className="inline-flex h-12 translate-y-0 items-center justify-center px-6 text-neutral-950 transition duration-[600ms] group-hover:-translate-y-[150%]">
               More Projects
             </div>
             <div className="absolute inline-flex h-36 w-full translate-y-[100%] items-center justify-center text-neutral-50 transition duration-500 group-hover:translate-y-0">
-              <span className="absolute h-full w-full translate-y-full skew-y-12 scale-y-0 bg-blue-500 transition duration-[600ms] group-hover:translate-y-0 group-hover:scale-[1.7]"></span>
+              <span className="absolute h-full w-full translate-y-full skew-y-12 scale-y-0 bg-[#5B84FF] transition duration-[600ms] group-hover:translate-y-0 group-hover:scale-[1.7]"></span>
               <span className="z-10">More Projects</span>
             </div>
-          </button>
+          </NavLink>
         </div>
       </div>
 
@@ -300,7 +304,7 @@ const Home = () => {
         >
           <div className="w-full min-w-[calc(var(--width)_*_var(--quantity))] border-b-2 flex items-center relative ">
             <div
-              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300  dark:bg-[#A3a3a3] bg-[#f0f0f0]"
               style={{ "--position": 1 }}
             >
               <img className="w-full" src={cryptoLogo} alt="html" />
