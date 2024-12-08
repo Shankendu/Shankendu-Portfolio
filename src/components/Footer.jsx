@@ -31,7 +31,7 @@ const Footer = (props) => {
               href="mailto:shankenduk@gmail"
               className="group relative z-0 h-fit w-full md:w-fit py-8 px-10 shadow-xl group-hover:shadow-2xl flex items-center justify-center overflow-hidden overflow-x-hidden rounded-full border group-hover:border-0 dark:border-[#EAEAEA] border-[#333333]  dark:text-[#eaeaea] text-[#333333]"
             >
-              <span className="relative z-10" href="mailto:shankenduk@gmail">
+              <span className="relative z-10">
                 shankenduk@gmail.com
               </span>
               <span className="absolute inset-0 overflow-hidden rounded-md">

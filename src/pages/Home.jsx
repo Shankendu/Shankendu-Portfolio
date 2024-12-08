@@ -84,12 +84,12 @@ useEffect(() => {
           }, 100);
         },
       });
-      gsap.from(["#navbar", "#home", "#rightLeft", "#marquee", "#hamburger"], {
-        y: "-200%",
+      gsap.from(["#navbar", "#home", "#rightLeft", "#marquee", "#hamburger", "#hero"], {
+        y: "200%",
         duration: 3,
         ease: "ease-in",
       });
-      gsap.to(["#navbar", "#home", "#rightLeft", "#marquee", "#hamburger"], {
+      gsap.to(["#navbar", "#home", "#rightLeft", "#marquee", "#hamburger", "#hero"], {
         y: "0",
         duration: 3,
         ease: "ease-in",
@@ -102,6 +102,7 @@ useEffect(() => {
       {/* Hero Section */}
       <div
         className="w-full min-h-screen relative overflow-hidden dark:bg-[#1A1A1A] bg-[#F0F0F0] "
+        id="hero"
         ref={container}
       >
         <Preload id="preload" className="absolute z-20" />
@@ -197,9 +198,8 @@ useEffect(() => {
         </div>
 
         {/* Name Marquee */}
-        <div className="absolute bottom-0 w-full flex justify-center font-poppins">
+        <div className="absolute bottom-0 w-full flex justify-center font-poppins" id="marquee">
           <div
-            id="marquee"
             className="flex items-center h-[50px] w-[200%] text-[max(2em,_16vw)] md:text-[max(6em,_16vw)] dark:text-[#EAEAEA] text-[#333333] relative selection:bg-transparent dark:selection:bg-transparent group/marquee cursor-pointer"
             draggable="false"
           >

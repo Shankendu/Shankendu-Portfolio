@@ -41,7 +41,7 @@ const About = () => {
         },
       });
       gsap.from(["#navbar", "#hamburger", "#about"], {
-        y: "-200%",
+        y: "200%",
         duration: 3,
         ease: "ease-in",
       });
@@ -56,6 +56,7 @@ const About = () => {
   return (
     <>
       <div
+        id="about"
         className="w-full min-h-screen dark:bg-[#1A1A1A] bg-[#F0F0F0] overflow-hidden"
         ref={container}
       >
@@ -74,10 +75,7 @@ const About = () => {
         />
         <Navbar onClick={() => setOpen(!open)} id="navbar" />
 
-        <div
-          id="about"
-          className="pt-10 p-5 md:p-20 dark:text-[#EAEAEA] text-[#333333] font-poppins"
-        >
+        <div className="pt-10 p-5 md:p-20 dark:text-[#EAEAEA] text-[#333333] font-poppins" id="about">
           {/* About Heading */}
           <div className="pb-5 md:pb-20 border-b dark:border-[#A3A3A3] border-[#F0F0F0]">
             <h1 className="text-3xl md:text-6xl lg:text-7xl lg:w-3/4">
@@ -87,9 +85,7 @@ const About = () => {
 
           {/* About Desc*/}
           <div
-            className={`${
-              loading ? "hidden" : "flex"
-            } pt-10 md:pt-20 flex-col-reverse md:flex-row justify-center items-center md:items-start md:gap-x-20`}
+            className={`flex pt-10 md:pt-20 flex-col-reverse md:flex-row justify-center items-center md:items-start md:gap-x-20`}
           >
             <section className="w-full md:w-[40%] relative">
               <p className="pt-3 md:pt-0 text-center md:text-left text-xl font-light">
@@ -134,9 +130,7 @@ const About = () => {
 
           {/* About Education*/}
           <div
-            className={`${
-              loading ? "hidden" : "flex"
-            } pt-20 flex-col-reverse md:flex-row-reverse justify-center items-start gap-x-20`}
+            className={`flex pt-20 flex-col-reverse md:flex-row-reverse justify-center items-start gap-x-20`}
           >
             <section className="w-full md:w-[40%]">
               <p className="hidden md:block text-left text-sm font-light dark:text-[#a3a3a3] text-[#f0f0f0] pb-5 border-b dark:border-[#A3A3A3] border-[#F0F0F0]">
