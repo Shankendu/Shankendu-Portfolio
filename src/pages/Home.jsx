@@ -101,7 +101,7 @@ useEffect(() => {
     <>
       {/* Hero Section */}
       <div
-        className="w-full min-h-screen relative overflow-hidden dark:bg-[#1A1A1A] bg-[#F0F0F0] "
+        className="w-full min-h-screen relative overflow-hidden bg-[#1A1A1A]"
         id="hero"
         ref={container}
       >
@@ -138,28 +138,19 @@ useEffect(() => {
           className="w-full flex justify-between items-center absolute bottom-[-60px] sm:bottom-[-60px] md:bottom-[40%] md:top-[40%] lg:top-[25%] xl:top-[25%] z-10"
         >
           {/* Location component */}
-          <div className="md:w-[250px] lg:w-[300px] h-[120px] rounded-r-full dark:bg-[#3C3C3C] bg-[#D4D4D4] hidden md:flex items-center justify-between">
-            <div className="font-poppins dark:text-[#EAEAEA] text-[#333333] text-xl pl-10 ">
+          <div className="md:w-[250px] lg:w-[300px] h-[120px] rounded-r-full bg-[#3C3C3C] hidden md:flex items-center justify-between">
+            <div className="font-poppins text-[#EAEAEA] text-xl pl-10 ">
               <p>Located</p>
               <p>in the</p>
               <p>India</p>
             </div>
-            <div className="w-24 h-24 rounded-full dark:bg-[#1A1A1A] mr-4 bg-[#F0F0F0] flex items-center justify-center">
-              <div className="dark:flex hidden dark:items-center dark:justify-center ">
+            <div className="w-24 h-24 rounded-full bg-[#1A1A1A] mr-4 flex items-center justify-center">
+              <div className="flex items-center justify-center ">
                 <lord-icon
                   src="https://cdn.lordicon.com/rpviwvwn.json"
                   trigger="loop"
                   state="loop-rotate"
                   colors="primary:#eaeaea,secondary:#eaeaea"
-                  style={{ width: "64px", height: "64px" }}
-                ></lord-icon>
-              </div>
-              <div className="flex items-center justify-center dark:hidden">
-                <lord-icon
-                  src="https://cdn.lordicon.com/rpviwvwn.json"
-                  trigger="loop"
-                  state="loop-rotate"
-                  colors="primary:#333333,secondary:#333333"
                   style={{ width: "64px", height: "64px" }}
                 ></lord-icon>
               </div>
@@ -170,7 +161,7 @@ useEffect(() => {
           <div className="w-full md:w-[380px] lg:w-[500px] h-[200px] flex md:flex-col items-center justify-between md:items-end md:justify-evenly">
             {/* Audio Component */}
             <div
-              className="w-10 h-10 border-2 relative dark:border-[#5B84FF] border-[#5B84FF] rounded-full ml-5 md:mr-10 flex items-center justify-center cursor-pointer before:w-10 before:h-10 before:border-2 before:dark:border-[#5B84FF] before:border-[#5B84FF] before:absolute before:top-[-5%] before:left-[-5%] before:translate-x-[-50%] before:translate-y-[-50%] before:rounded-full before:animate-ripple"
+              className="w-10 h-10 border-2 relative border-[#5B84FF] rounded-full ml-5 md:mr-10 flex items-center justify-center cursor-pointer before:w-10 before:h-10 before:border-2 before:border-[#5B84FF] before:absolute before:top-[-5%] before:left-[-5%] before:translate-x-[-50%] before:translate-y-[-50%] before:rounded-full before:animate-ripple"
               onClick={playPause}
             >
               {isPlaying ? (
@@ -190,7 +181,7 @@ useEffect(() => {
               )}
             </div>
             {/* Text component */}
-            <div className="font-poppins dark:text-[#EAEAEA] text-[#333333] text-base md:text-3xl lg:text-4xl pr-5 md:pr-10">
+            <div className="font-poppins text-[#EAEAEA] text-base md:text-3xl lg:text-4xl pr-5 md:pr-10">
               <p>Creator</p>
               <p>Designer & Developer</p>
             </div>
@@ -200,7 +191,7 @@ useEffect(() => {
         {/* Name Marquee */}
         <div className="absolute bottom-0 w-full flex justify-center font-poppins" id="marquee">
           <div
-            className="flex items-center h-[50px] w-[200%] text-[max(2em,_16vw)] md:text-[max(6em,_16vw)] dark:text-[#EAEAEA] text-[#333333] relative selection:bg-transparent dark:selection:bg-transparent group/marquee cursor-pointer"
+            className="flex items-center h-[50px] w-[200%] text-[max(2em,_16vw)] md:text-[max(6em,_16vw)] text-[#EAEAEA] relative selection:bg-transparent group/marquee cursor-pointer"
             draggable="false"
           >
             <div
@@ -223,10 +214,10 @@ useEffect(() => {
       <div
         className={`${
           loading ? "hidden" : "block"
-        } dark:bg-[#eaeaea] bg-[#333333] min-h-screen w-full font-poppins dark:text-[#1a1a1a] text-[#F0F0F0] p-5 md:p-20`}
+        } bg-[#eaeaea]  min-h-screen w-full font-poppins text-[#1a1a1a] p-5 md:p-0 md:pt-20 md:px-20`}
       >
         {/* About Section */}
-        <div className=" w-full h-fit flex flex-col md:flex-row item-center md:items-start justify-center px-5 pt-5 border-b-2 dark:border-[#A3A3A3] border-[#F0F0F0] ">
+        <div className=" w-full h-fit flex flex-col md:flex-row item-center md:items-start justify-center px-5 pt-5 border-b border-[#A3A3A3] ">
           <div className=" px-5 pt-5 h-[inherit] flex flex-col item-center md:items-start justify-center md:justify-start gap-y-24">
             <h1 className="text-xl md:text-3xl leading-relaxed  ">
               I’m a passionate web developer with expertise in creating
@@ -241,7 +232,7 @@ useEffect(() => {
               I focus on creating user-centered designs with clean code,
               delivering tailored solutions that make every project stand out.
             </h1>
-            <NavLink to="/about" className="group relative z-0 h-44 w-44 shadow-xl group-hover:shadow-2xl flex items-center justify-center overflow-hidden overflow-x-hidden rounded-full dark:bg-[#1a1a1a] bg-[#F0F0F0]  dark:text-[#eaeaea] text-[#333333]">
+            <NavLink to="/about" className="group relative z-0 h-44 w-44 shadow-xl group-hover:shadow-2xl flex items-center justify-center overflow-hidden overflow-x-hidden rounded-full bg-[#1a1a1a] text-[#eaeaea]">
               <span className="relative z-10">About Me</span>
               <span className="absolute inset-0 overflow-hidden rounded-md">
                 <span className="absolute left-0 aspect-square w-full origin-center translate-x-full rounded-full bg-[#5B84FF] transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
@@ -251,7 +242,7 @@ useEffect(() => {
         </div>
 
         {/* Work Section */}
-        <div className="w-full h-fit p-10 border-b-2 dark:border-[#A3A3A3] border-[#F0F0F0] flex md:flex-row flex-col items-center justify-between">
+        <div className="w-full h-fit p-10 border-b border-[#A3A3A3] flex md:flex-row flex-col items-center justify-between">
           <h1 className="text-4xl sm:text-5xl md:text-5xl lg:7xl pb-10 md:pb-0 hover:text-[#A3A3A3] transition-colors duration-500">
             CRYPTOTRACKR
           </h1>
@@ -259,14 +250,14 @@ useEffect(() => {
           <div className="h-[10em] sm:h-[12em] md:h-[10em] w-[17em] sm:w-[20em] md:w-[17em] rounded-[1em] overflow-hidden relative group p-4 z-0">
             <div className="circle absolute h-[5em] w-[5em] -top-[2.5em] -right-[2.5em] rounded-full bg-[#5B84FF] group-hover:scale-[800%] duration-500 group-hover:opacity-60 group-hover:blur-md"></div>
 
-            <button className="text-[0.8em] absolute bottom-[1em] left-[1em] group-hover:dark:text-[#eaeaea] group-hover:text-[#333333] duration-500">
+            <button className="text-[0.8em] absolute bottom-[1em] left-[1em] group-hover:text-[#eaeaea] group-hover:text-[#333333] duration-500">
               <a href="https://github.com/Shankendu/CryptoTrackr---Price-Tracking-and-Market-Analysis" target="_blank" rel="noopener noreferrer" className="relative before:h-[0.16em] before:absolute before:w-full before:content-[''] group-hover:before:bg-[white] duration-100 before:bottom-0 before:left-0 scale-0 group-hover:scale-100">
                 source code
               </a>
               <i className="fa-solid fa-arrow-right"></i>
             </button>
 
-            <button className="absolute font-poppins scale-0 group-hover:scale-100 group-hover:dark:text-[#eaeaea] group-hover:text-[#333333]  duration-500 text-[1.4em]">
+            <button className="absolute font-poppins scale-0 group-hover:scale-100 group-hover:text-[#eaeaea] group-hover:text-[#333333]  duration-500 text-[1.4em]">
               <a href="https://crypto-trackr-price-tracking-and-market-analysis.vercel.app/" target="_blank" rel="noopener noreferrer">VIEW PAGE</a>
             </button>
             <img
@@ -278,9 +269,9 @@ useEffect(() => {
         </div>
 
         {/* View More Button */}
-        <div className="w-full h-fit md:px-20 py-10 md:pt-20 flex items-center justify-center">
-          <NavLink to="/projects" className="group relative inline-flex h-24 w-full md:w-60 items-center justify-center overflow-hidden rounded-full border dark:border-[#A3A3A3] border-[#F0F0F0]  bg-transparent font-medium">
-            <div className="inline-flex h-12 translate-y-0 items-center justify-center px-6 text-neutral-950 transition duration-[600ms] group-hover:-translate-y-[150%]">
+        <div className="w-full h-fit md:px-20 py-10 md:py-0 md:pt-20 flex items-center justify-center">
+          <NavLink to="/projects" className="group relative inline-flex h-24 w-full md:w-60 items-center justify-center overflow-hidden rounded-full border border-[#A3A3A3] bg-transparent font-medium">
+            <div className="inline-flex h-12 translate-y-0 items-center justify-center px-6 text-[#1a1a1a] transition duration-[600ms] group-hover:-translate-y-[150%]">
               More Projects
             </div>
             <div className="absolute inline-flex h-36 w-full translate-y-[100%] items-center justify-center text-neutral-50 transition duration-500 group-hover:translate-y-0">
@@ -295,46 +286,46 @@ useEffect(() => {
       <div
         className={`${
           loading ? "md:hidden" : "md:block"
-        } w-full h-fit pb-20 dark:bg-[#eaeaea] bg-[#333333] hidden`}
+        } w-full h-fit pb-20 bg-[#eaeaea]  hidden border-none`}
       >
         {/* Slider-1 */}
         <div
-          className="w-full mb-5 h-[250px] overflow-hidden group"
+          className="w-full my-10 h-[250px] overflow-hidden group border-none"
           style={{ "--width": "600px", "--quantity": 6 }}
         >
-          <div className="w-full min-w-[calc(var(--width)_*_var(--quantity))] border-b-2 flex items-center relative ">
+          <div className="w-full min-w-[calc(var(--width)_*_var(--quantity))] flex items-center relative ">
             <div
-              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300  dark:bg-[#A3a3a3] bg-[#f0f0f0]"
+              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun  group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300  bg-[#A3a3a3]"
               style={{ "--position": 1 }}
             >
               <img className="w-full" src={cryptoLogo} alt="html" />
             </div>
             <div
-              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun  group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
               style={{ "--position": 2 }}
             >
               <img className="w-full" src={layerLogo} alt="css" />
             </div>
             <div
-              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun  group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
               style={{ "--position": 3 }}
             >
               <img className="w-full" src={weatherLogo} alt="javascript" />
             </div>
             <div
-              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun  group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
               style={{ "--position": 4 }}
             >
               <img className="w-full" src={latestLogo} alt="react" />
             </div>
             <div
-              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun  group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
               style={{ "--position": 5 }}
             >
               <img className="w-full" src={textLogo} alt="tailwind" />
             </div>
             <div
-              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              className="w-[var(--width)] h-[250px] absolute top-0 left-[100%] animate-autorun  group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
               style={{ "--position": 6 }}
             >
               <img className="w-full" src={qrLogo} alt="bootstrap" />
@@ -347,39 +338,39 @@ useEffect(() => {
           className="w-full h-[250px] overflow-hidden group"
           style={{ "--width": "600px", "--quantity": 6 }}
         >
-          <div className="w-full min-w-[calc(var(--width)_*_var(--quantity))] border-b-2 flex items-center relative ">
+          <div className="w-full min-w-[calc(var(--width)_*_var(--quantity))] flex items-center relative ">
             <div
-              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse  group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
               style={{ "--position": 1 }}
             >
               <img className="w-full" src={cryptoLogo} alt="html" />
             </div>
             <div
-              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse  group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
               style={{ "--position": 2 }}
             >
               <img className="w-full" src={layerLogo} alt="css" />
             </div>
             <div
-              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse  group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
               style={{ "--position": 3 }}
             >
               <img className="w-full" src={weatherLogo} alt="javascript" />
             </div>
             <div
-              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse  group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
               style={{ "--position": 4 }}
             >
               <img className="w-full" src={latestLogo} alt="react" />
             </div>
             <div
-              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse  group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
               style={{ "--position": 5 }}
             >
               <img className="w-full" src={textLogo} alt="tailwind" />
             </div>
             <div
-              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse group-hover:[animation-play-state:paused] group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
+              className="w-[var(--width)] h-[250px] absolute top-0 right-[100%] animate-autorun-reverse  group-hover:grayscale hover:[filter:grayscale(0)!important] transition duration-300"
               style={{ "--position": 6 }}
             >
               <img className="w-full" src={qrLogo} alt="bootstrap" />

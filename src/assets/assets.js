@@ -12,15 +12,28 @@ import youth from "../assets/images/youth.jpg";
 import worship from "../assets/images/worship.jpg";
 import piano from "../assets/images/piano.jpg";
 import githubDark from "../assets/images/github-dark.png";
-import githubLight from "../assets/images/github-light.png";
 import linkedinDark from "../assets/images/linkedin-dark.png";
-import linkedinLight from "../assets/images/linkedin-light.png";
 import instaDark from "../assets/images/instagram-dark.png";
-import instaLight from "../assets/images/instagram-light.png";
 import facebookDark from "../assets/images/facebook-dark.png";
-import facebookLight from "../assets/images/facebook-light.png";
 import youtubeDark from "../assets/images/youtube-dark.png";
-import youtubeLight from "../assets/images/youtube-light.png";
+import cryptoLogo from "../assets/images/cryptoWork.png";
+import layerLogo from "../assets/images/layerLogo.png";
+import weatherLogo from "../assets/images/weatherLogo.png";
+import latestLogo from "../assets/images/latestLogo.png";
+import textLogo from "../assets/images/textLogo.png";
+import qrLogo from "../assets/images/qrLogo.png";
+import cryptoHome from "../assets/video/cryptoHome.mp4";
+import cryptoTrending from "../assets/video/cryptoTrending.mp4";
+import layerHome from "../assets/video/layerHome.mp4";
+import layerLoading from "../assets/video/layerLoading.mp4";
+import breezeNowLoading from "../assets/video/breezeNowLoading.mp4";
+import breezeNowHome from "../assets/video/breezeNowHome.mp4";
+import textModHome from "../assets/video/textModHome.mp4";
+import textModAbout from "../assets/video/textModAbout.mp4";
+import qrCodeHome from "../assets/video/qrCodeHome.mp4";
+import qrCodeWork from "../assets/video/qrCodeWork.mp4";
+import latestHome from "../assets/video/latestHome.mp4";
+import latestForm from "../assets/video/latestForm.mp4";
 
 export const skills = [
   {
@@ -97,32 +110,90 @@ export const socials = [
   {
     name: "Github",
     imageDark: githubDark,
-    imageLight: githubLight,
     link: "https://github.com/Shankendu"
   },
   {
     name: "Linkedin",
     imageDark: linkedinDark,
-    imageLight: linkedinLight,
     link: "https://www.linkedin.com/in/shankendu-kunti-201153293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
   },
   {
     name: "Instagram",
     imageDark: instaDark,
-    imageLight: instaLight,
     link: "https://www.instagram.com/shankendu.__/"
   },
   {
     name: "Facebook",
     imageDark: facebookDark,
-    imageLight: facebookLight,
     link: "https://www.facebook.com/shankendu"
   },
   {
     name: "YouTube",
     imageDark: youtubeDark,
-    imageLight: youtubeLight,
     link: "https://www.youtube.com/@shankendukunti"
   },
 ]
+
+export const projects = [
+  {
+    title: "CryptoTrackr",
+    description: "CryptoTrackr is a platform for real-time crypto prices, trends, news, and currency conversion, helping users stay informed in the crypto market.",
+    thumbnail: cryptoLogo,
+    techStack: ["React", "Tailwind", "Chart.js", "CoinGecko API"],
+    githubLink: "https://github.com/Shankendu/CryptoTrackr---Price-Tracking-and-Market-Analysis",
+    liveLink: "https://crypto-trackr-price-tracking-and-market-analysis.vercel.app/",
+    video1: cryptoHome,
+    video2: cryptoTrending,
+  },
+  {
+    title: "BreezeNow",
+    description: "BreezeNow is a sleek weather app providing real-time forecasts, temperature updates, and weather trends, ensuring you stay prepared for any conditions.",
+    thumbnail: weatherLogo,
+    techStack: ["React", "Tailwind", "OpenWeather API"],
+    githubLink: "https://github.com/Shankendu/BreezeNow---Weather-App",
+    liveLink: "https://breeze-now-weather-app.vercel.app/",
+    video1: breezeNowLoading,
+    video2: breezeNowHome
+  },
+  {
+    title: "LayerN",
+    description: "DEX Aggregator based on Modular DA providing minimal fees, transaction speed & reduced blob sizes.",
+    thumbnail: layerLogo,
+    techStack: ["React", "Tailwind", "GSAP"],
+    githubLink: "https://github.com/Shankendu/LayerN-Landing-Page",
+    liveLink: "https://layer-n-landing-page.vercel.app/",
+    video1: layerLoading,
+    video2: layerHome,
+  },
+  {
+    title: "TextMod",
+    description: "TextMod is a user-friendly web application designed to provide comprehensive text manipulation tools.",
+    thumbnail: textLogo,
+    techStack: ["React", "Tailwind"],
+    githubLink: "https://github.com/Shankendu/TextMod",
+    liveLink: "https://shankendu.github.io/TextMod/",
+    video1:textModHome,
+    video2:textModAbout
+  },
+  {
+    title: "Latest Technologies",
+    description: "A sophisticated, responsive contact form built with React and Tailwind CSS, featuring comprehensive form validation using Formik and Yup.",
+    thumbnail: latestLogo,
+    techStack: ["React", "Tailwind", "Formik", "Yup"],
+    githubLink: "https://github.com/Shankendu/Latest-Technologies",
+    liveLink: "https://latest-technologies.vercel.app/",
+    video1: latestHome,
+    video2: latestForm
+  },
+  {
+    title: "QR Code Generator",
+    description: "QR Code Generator is a simple and efficient web-based tool that allows users to create customized QR codes.",
+    thumbnail: qrLogo,
+    techStack: ["HTML", "CSS", "JavaScript"],
+    githubLink: "https://github.com/Shankendu/qr-code-generator",
+    liveLink: "https://qr-code-generator-phi-fawn.vercel.app/",
+    video1: qrCodeHome,
+    video2: qrCodeWork
+  },
+];
 

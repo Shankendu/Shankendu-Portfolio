@@ -56,8 +56,7 @@ const About = () => {
   return (
     <>
       <div
-        id="about"
-        className="w-full min-h-screen dark:bg-[#1A1A1A] bg-[#F0F0F0] overflow-hidden"
+        className="w-full min-h-screen relative bg-gradient-to-b from-[#1a1a1a] to-[#333333] overflow-hidden"
         ref={container}
       >
         <PagePreload id="preload" className="absolute z-20" name="ABOUT." />
@@ -75,9 +74,9 @@ const About = () => {
         />
         <Navbar onClick={() => setOpen(!open)} id="navbar" />
 
-        <div className="pt-10 p-5 md:p-20 dark:text-[#EAEAEA] text-[#333333] font-poppins" id="about">
+        <div className="pt-10 p-5 md:p-20 text-[#EAEAEA] font-poppins" id="about">
           {/* About Heading */}
-          <div className="pb-5 md:pb-20 border-b dark:border-[#A3A3A3] border-[#F0F0F0]">
+          <div className="pb-5 md:pb-20 border-b border-[#A3A3A3]">
             <h1 className="text-3xl md:text-6xl lg:text-7xl lg:w-3/4">
               Behind the Code: The Web Developer Who Plays Piano Too!
             </h1>
@@ -94,7 +93,7 @@ const About = () => {
                 curiosity and innovation, I transform ideas into digital
                 experiences that leave a lasting impression.
               </p>
-              <p className="text-center md:text-left text-lg pt-6 italic font-light dark:text-[#a3a3a3] text-[#f0f0f0]">
+              <p className="text-center md:text-left text-lg pt-6 italic font-light text-[#a3a3a3]">
                 Code, Create, Explore.
               </p>
 
@@ -103,7 +102,7 @@ const About = () => {
                   href={resume}
                   download={true}
                   type="submit"
-                  className="w-fit flex justify-center gap-2 items-center mt-10 shadow-xl text-lg dark:bg-[#eaeaea] bg-[#333333] dark:text-[#1a1a1a] text-[#F0F0F0] backdrop-blur-md lg:font-semibold isolation-auto dark:border-[#eaeaea] border-[#333333] before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#5B84FF] hover:dark:text-[#eaeaea] hover:text-[#333333] before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
+                  className="w-fit flex justify-center gap-2 items-center mt-10 shadow-xl text-lg bg-[#eaeaea] text-[#1a1a1a] backdrop-blur-md lg:font-semibold isolation-auto border-[#eaeaea] before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#5B84FF] hover:text-[#eaeaea] before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
                 >
                   <p>Resume</p>
                   <svg
@@ -130,10 +129,10 @@ const About = () => {
 
           {/* About Education*/}
           <div
-            className={`flex pt-20 flex-col-reverse md:flex-row-reverse justify-center items-start gap-x-20`}
+            className={` flex pt-20 flex-col-reverse md:flex-row-reverse justify-center items-start gap-x-20`}
           >
             <section className="w-full md:w-[40%]">
-              <p className="hidden md:block text-left text-sm font-light dark:text-[#a3a3a3] text-[#f0f0f0] pb-5 border-b dark:border-[#A3A3A3] border-[#F0F0F0]">
+              <p className="hidden md:block text-left text-sm font-light text-[#a3a3a3] pb-5 border-b border-[#A3A3A3]">
                 EDUCATION
               </p>
               <div className="pt-5">
@@ -142,7 +141,7 @@ const About = () => {
                   Vasantdada Patil Pratisthan&apos;s College of Engineering and
                   Visual Arts, Mumbai.
                 </p>
-                <div className="pl-3 text-sm font-light dark:text-[#a3a3a3] text-[#f0f0f0] flex justify-between items-center pt-1">
+                <div className="pl-3 text-sm font-light text-[#a3a3a3] flex justify-between items-center pt-1">
                   <p>2024</p>
                   <p>8.31 GPA</p>
                 </div>
@@ -155,7 +154,7 @@ const About = () => {
                 <p className="pl-3 text-base font-light pt-1">
                   Mother Mary Jr. College of Science, Commerce and Arts, Mumbai.
                 </p>
-                <div className="pl-3 text-sm font-light dark:text-[#a3a3a3] text-[#f0f0f0] flex justify-between items-center pt-1">
+                <div className="pl-3 text-sm font-light text-[#a3a3a3] flex justify-between items-center pt-1">
                   <p>2020</p>
                   <p>75.54 %</p>
                 </div>
@@ -168,7 +167,7 @@ const About = () => {
                 <p className="pl-3 text-base font-light pt-1">
                   Father Joseph English High School, Mumbai.
                 </p>
-                <div className="pl-3 text-sm font-light dark:text-[#a3a3a3] text-[#f0f0f0] flex justify-between items-center pt-1">
+                <div className="pl-3 text-sm font-light text-[#a3a3a3] flex justify-between items-center pt-1">
                   <p>2018</p>
                   <p>86.40 %</p>
                 </div>
@@ -188,7 +187,7 @@ const About = () => {
         <div
           className={`${
             loading ? "hidden" : "block"
-          } dark:bg-[#eaeaea] bg-[#333333] dark:text-[#1a1a1a] text-[#F0F0F0]`}
+          } text-[#eaeaea]`}
         >
           <div className="py-5 md:py-10 font-poppins w-full text-center">
             <h1 className="pb-10 text-5xl">SKILLS</h1>
@@ -226,20 +225,20 @@ const About = () => {
         <div
           className={`${
             loading ? "hidden" : "block"
-          } px-5 md:px-20  dark:bg-[#eaeaea] bg-[#333333] dark:text-[#1a1a1a] text-[#F0F0F0]`}
+          } px-5 md:px-20  text-[#1a1a1a]`}
         >
-          <section className="p-8 bg-[#F0F0F0] dark:bg-[#1a1a1a]">
-            <h2 className="text-xl md:text-2xl font-bold text-[#333333] dark:text-[#eaeaea] mb-6 font-poppins">
-              My Skills
+          <section className="p-8 bg-[#1a1a1a]">
+            <h2 className="text-xl md:text-2xl font-bold text-[#eaeaea] mb-6 font-poppins">
+              MY SKILLS
             </h2>
-            <div className="bg-[#F0F0F0] dark:bg-[#1a1a1a] text-[#333333] dark:text-[#eaeaea] rounded-lg shadow-lg overflow-hidden">
+            <div className=" bg-[#1a1a1a] text-[#eaeaea] rounded-lg shadow-lg overflow-hidden">
               <div className="bg-[#272728] flex items-center px-4 py-2">
                 <div className="flex space-x-2">
                   <span className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"></span>
                   <span className="w-3 h-3 bg-yellow-500 rounded-full cursor-pointer"></span>
                   <span className="w-3 h-3 bg-green-500 rounded-full cursor-pointer"></span>
                 </div>
-                <span className="ml-auto text-sm text-gray-400">skills.js</span>
+                <span className="ml-auto text-sm text-[#a3a3a3]">skills.js</span>
               </div>
               <div className="p-4 font-source text-sm">
                 <p className="text-green-400 ">
@@ -272,11 +271,11 @@ const About = () => {
         <div
           className={`${
             loading ? "hidden" : "block"
-          } py-10 px-5 md:p-20 dark:bg-[#eaeaea] bg-[#333333] dark:text-[#1a1a1a] text-[#F0F0F0]`}
+          } py-10 px-5 md:p-20`}
         >
-          <section className="p-8 dark:bg-[#1a1a1a] bg-[#F0F0F0] font-poppins">
-            <h2 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">
-              Beyond Coding
+          <section className="p-8 bg-[#1a1a1a] font-poppins">
+            <h2 className="text-xl md:text-2xl font-bold text-[#eaeaea] mb-6">
+              BEYOND CODING
             </h2>
             <div className="flex flex-col lg:flex-row items-center justify-between gap-y-4 lg:gap-y-0">
               {extraSkills.map((item, index) => {
@@ -290,7 +289,7 @@ const About = () => {
                         ></div>
                         <div className="absolute w-56 left-0 p-5 -bottom-16 duration-500 group-hover:-translate-y-12">
                           <div className="absolute -z-10 left-0 w-64 h-28 opacity-0 duration-500 group-hover:opacity-50 group-hover:bg-[#1a1a1a]"></div>
-                          <span className="text-lg font-bold">{item.name}</span>
+                          <span className="text-sm font-normal">{item.name}</span>
                           <p className="group-hover:opacity-100 w-56 duration-500 opacity-0">
                             {item.desc}
                           </p>
